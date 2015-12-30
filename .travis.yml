@@ -12,7 +12,6 @@ env:
     - TOXENV=py27
     - TOXENV=pypy
     - TOXENV=py34
-    - TOXENV=py35
 
 # matrix:
 #  exclude:
