@@ -51,8 +51,8 @@ after_script:
 before_deploy:
   - echo "before_deploy"
 
-deploy:
-  skip_cleanup: true
+# deploy:
+#  skip_cleanup: true
 
 after_deploy:
   - echo "after_deploy"
