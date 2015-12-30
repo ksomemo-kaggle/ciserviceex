@@ -1,0 +1,76 @@
+# https://docs.travis-ci.com/user/customizing-the-build/
+# https://docs.travis-ci.com/user/languages/python
+
+sudo: false
+language: python
+
+python:
+  - "3.4"
+
+env:
+  matrix:
+    - TOXENV=py27
+    - TOXENV=pypy
+    - TOXENV=py34
+    - TOXENV=py35
+
+# matrix:
+#  exclude:
+#    - python: "3.4"
+#      env: MY_ENV1=myenv1
+#    - python: "3.5"
+#      env: MY_ENV2=myenv2
+#  include:
+#    - python: "2.7"
+#      env: MY_ENV1=include_27
+#    - python: "pypy"
+#      env: MY_ENV2=include_pypy
+
+before_install:
+  - echo "before_install"
+
+# install any dependencies required
+install:
+  - pip install tox
+
+before_script:
+  - echo "before_script"
+
+# run the build script
+script:
+    - tox -e $TOXENV
+
+after_failure:
+  - echo "after_failure( $TRAVIS_TEST_RESULT )"
+
+after_success:
+  - echo "after_success( $TRAVIS_TEST_RESULT )"
+
+after_script:
+  - echo "after_script"
+
+before_deploy:
+  - echo "before_deploy"
+
+deploy:
+	skip_cleanup: true
+
+after_deploy:
+  - echo "after_deploy"
+
+# If you specify both, only takes precedence over except.
+# By default, the gh-pages branch is not built unless you add it to the whitelist.
+# blacklist
+branches:
+  except:
+    - legacy
+    - experimental
+
+# whitelist
+branches:
+  only:
+    - master
+    - stable
+
+notifications:
+  email: false
