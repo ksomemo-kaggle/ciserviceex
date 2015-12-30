@@ -53,7 +53,7 @@ before_deploy:
   - echo "before_deploy"
 
 deploy:
-	skip_cleanup: true
+  skip_cleanup: true
 
 after_deploy:
   - echo "after_deploy"
