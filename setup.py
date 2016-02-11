@@ -26,7 +26,6 @@ setup(
     description='continuous integration service exercise',
     long_description=long_description(),
     author='ksomemo',
-    author_email='kntsmy@hotmail.co.jp',
     url='https://github.com/ksomemo/ciserviceex',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
