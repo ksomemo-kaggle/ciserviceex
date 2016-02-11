@@ -7,4 +7,5 @@ ci-services exercise
 
 build status
 ======================================
-[![Build Status](https://travis-ci.org/ksomemo/ciserviceex.svg?branch=master) ] (https://travis-ci.org/ksomemo/ciserviceex)
+.. image:: https://travis-ci.org/ksomemo/ciserviceex.svg?branch=master
+    :target: https://travis-ci.org/ksomemo/ciserviceex
